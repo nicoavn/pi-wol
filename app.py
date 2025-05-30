@@ -11,7 +11,7 @@ def wake():
         return "MAC address required", 400
 
     try:
-        subprocess.run(["wakeonlan", mac_address], check=True)
+        subprocess.run(["sudo", "wakeonlan", mac_address], check=True)
         return f"Magic packet sent to {mac_address}", 200
     except subprocess.CalledProcessError:
         return "Failed to send WoL packet", 500
