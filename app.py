@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.route('/wake', methods=['GET'])
+@app.route('/', methods=['GET'])
 def wake():
     mac_address = request.args.get('mac')
     if not mac_address:
